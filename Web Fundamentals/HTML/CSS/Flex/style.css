@@ -1,0 +1,40 @@
+/* REMEMBER, FLEX THE PARENT!! */
+
+
+nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(185, 208, 209);
+    padding: 12px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+}
+
+h1 {
+    color: green;
+}
+
+.child {
+    background-color: aqua;
+    width: 200px;
+    min-height: 200px;
+}
+
+.parent {
+    display: flex;
+    /* horizontal */
+    justify-content: space-evenly;
+    /* vertical */
+    align-items: center;
+    gap: 20px;
+    background-color: burlywood;
+    min-height: 400px;
+}
+
+/* When we flex an element, it becomes a FLEX CONTAINER */
+/* Its children become flex items */

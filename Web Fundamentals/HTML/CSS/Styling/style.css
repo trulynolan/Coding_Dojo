@@ -1,0 +1,26 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+    background-color: black;
+    }
+    
+span {
+    color: aqua;
+    background-color: black;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    background-color: purple;
+}
+
+h3 {
+    text-align: right;
+    color: rgb(45, 24, 94);
+    background-color: rgb(112, 165, 235);
+    text-decoration: underline;
+}
