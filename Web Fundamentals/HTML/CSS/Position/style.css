@@ -1,0 +1,24 @@
+h1 {
+    color: #008000;
+}
+
+/* You can add all h1, h2, h3 (text) (even P) elements to CSS and it will control them all.
+
+h1, h2, h3, p {
+    text align: center;
+}                         <-- like this     */
+
+.black-bg {
+    background-color: black;
+    margin: 0 auto;
+    min-height: 150px;
+}
+
+.square {
+    width: 100px;
+    min-height: 100px;
+}
+
+.orange {
+    background-color: orange;
+}
