@@ -1,0 +1,199 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.header {
+    display: flex;
+    background-color: black;
+    color: whitesmoke;
+    padding: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.header p {
+    margin-left: 25px;
+    margin-top: 10px;
+    color: rgb(230, 225, 225);
+}
+
+.header button {
+    margin-left: 40%;
+    background-color: rgb(25, 201, 201);
+}
+.header span{
+    color: whitesmoke;
+}
+
+.main {
+    display: flex;
+}
+
+.profile {
+    border: 2px solid gray;
+    margin: 20px;
+    width: 375px;
+    height: 300px;
+}
+
+.profile {
+    
+}
+
+.box {
+    width: 400px;
+    height: 280px;
+    border: 5px solid #7e9499d8;
+    margin: 20px auto;
+    position: relative;
+}
+
+.item1 {
+    width: 400px;
+    height: 100px;
+    background-color: rgb(50, 156, 182);
+}
+
+.user {
+    left: 20px;
+    top: 40px;
+}
+
+.user_icon {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.words h2 {
+    margin-left: 30px;
+    margin-top: 45px;
+    margin-bottom: 0px;
+}
+.words h3 {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.marker img {
+    height: 25px;
+}
+
+.marker {
+    margin-left: 30px;
+    display: flex;
+}
+.bio {
+    margin-left: 30px;
+}
+.marker a {
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+.education {
+    border: 1px solid gray;
+}
+.education p, .education h2 {
+    margin-left: 10px;
+}
+.education_header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(124, 120, 120);
+    color: whitesmoke;
+    margin-left: 0px;
+}
+.main-right {
+    padding: 20px;
+}
+
+.requests {
+    width: 316px;
+    height: 180px;
+    border: 5px solid #7e9499d8;
+}
+.item2 {
+    width: 316px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 5px 0px 0px 0px;
+}
+.number {
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: rgb(206, 202, 202);
+    color: rgb(2, 2, 2);
+    height: 23px;
+    padding: 0 10px;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+.item2 h4 {
+    color: whitesmoke;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.connections {
+    width: 316px;
+    height: 300px;
+    border: 5px solid #7e9499d8;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.words2 {
+    width: 316px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+}
+/* .words2 h4 {
+    color: whitesmoke;
+    border-radius: 50%;
+    border: black;
+    background-color: rgb(206, 202, 202);
+    height: 20px;
+    width: 40px; */
+/* } */
+.words2 h3 {
+    color: whitesmoke;
+    margin-top: 12px;
+    margin-left: 16px;
+}
+.pics {
+    height: 65px;
+    display: flex;
+}
+.connections .pics p {
+    margin: 25px 0px 0px 30px;
+}
+
+.connections2 {
+    width: 316px;
+    height: 15px;
+    border-bottom: 5px solid  #7e9499d8;
+    border-left: 5px solid #7e9499d8;
+    border-right: 5px solid #7e9499d8;
+}
+
+.icons {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+
+.iconbox {
+    margin-left: 60px;
+    margin-top: 15px;
+}
+.pics p  {
+    width: 70px;
+}

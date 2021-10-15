@@ -107,6 +107,61 @@ console.log(result1);
 var result2 = isPal( [3, 2, 1, 1, 2, 3] );
 console.log(result2);
 
+// Fridayyyyy
+
+var fruit1 = "apples";
+var fruit2 = "oranges";
+    
+fruit2 = fruit1;
+    
+console.log(fruit2 + " and " + fruit1);
+// apples and apples
+
+var fruit1 = "apples";
+var fruit2 = "oranges";
+    
+var temp = fruit1; // temp is a common name for this
+fruit1 = fruit2;
+fruit2 = temp;
+    
+console.log(fruit2 + " and " + fruit1);
+// apples and oranges
+
+
+var start = 0;
+var end = 12;
+    
+while(start < end) {
+    console.log("start: " + start + ", end: " + end);
+    start += 2;
+    end -= 2;
+}
+
+
+// Reversing an array
+
+
+var x = ["a", "b", "c", "d", "e"];
+function reverse(X)
+
+for(m = x.length; m>0; m--) {
+    
+}
+console.log; x[m]
+
+// Selinas idea
+
+var array = ["a", "b", "c", "d", "e"];
+
+for (var i=0; i<array.length/2; i++) { 
+    var temp=array[i]
+    array[i]= array[array.length-1-i]
+    array[array.length-1-i]=temp
+}
+
+console.log(array)
+
+
 
 
 
