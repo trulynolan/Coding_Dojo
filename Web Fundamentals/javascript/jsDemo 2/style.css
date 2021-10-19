@@ -1,0 +1,49 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(158, 158, 253);
+}
+
+.flexed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 125px;
+}
+
+h1, h3 {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    background-color: rgb(255, 217, 0);
+}
+
+small {
+    font-style: italic;
+}
+
+#yourFav {
+    gap: 20px;
+}
+
+input {
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 15px;
+    background-color: rgb(255, 217, 0);
+    border: none;
+    border-radius: 5px;
+}

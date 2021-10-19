@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS in HTML Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>JS Master</h1>
+    <h3>My favorite starter: </h3>
+    <div class="flexed">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png" alt="cyndaquil" onmouseenter="enter(this)" onmouseleave="leave(this)">
+    </div>
+    <small class="flexed">(Hover over the image to see their back!)</small>
+    <h3>My favorite legendary: </h3>
+    <div class="flexed">
+        <img src="./images/suicuneFront.png" alt="suicune" onclick="alertName()">
+    </div>
+    <small class="flexed">(Click the image to see an alert of its name!)</small>
+    <h3>What number is your favorite pokemon?</h3>
+    <div id="yourFav" class="flexed">
+        <input type="text" name="num" id="number">
+        <button onclick="getNumber()">Show me the Pokemon!</button>
+        <!-- TO DO: Receive the input of the number when the button is clicked -->
+    </div>
+    <div class="flexed">
+        <!-- TO DO: Make the front image of the pokemon show up after the button above is clicked -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- Refs for images -->
+<!-- Cyndaquil front: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png -->
+<!-- Cyndaquil back: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/155.png -->
