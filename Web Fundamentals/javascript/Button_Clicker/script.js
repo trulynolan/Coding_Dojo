@@ -8,5 +8,5 @@ function dissappear(button) {
 }
 
 function pop() {
-    alert("Ninja was liked!");
+    alert("This is the biggest virus in the WORLD!");
 }

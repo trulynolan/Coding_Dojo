@@ -1,0 +1,30 @@
+.container {
+    width: 350px;
+    height: 200px;
+    border: solid black;
+    margin: 50px;
+}
+.top {
+    display: flex;
+    margin: 13px;
+}
+
+.top h2 {
+    margin-right: 50px;
+    margin-top: 15px;
+
+}
+
+.likebox {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    border: solid black;
+    margin-top: 18px;
+    margin-left: 18px;
+    box-shadow: 2px 3px black;
+    background-color: rgb(235, 231, 20);
+}
+.bottom {
+    padding: 8px;
+}
