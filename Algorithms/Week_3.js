@@ -26,17 +26,17 @@ console.log(reverseString("creature"));
 //  0123456789
 // Example: "there's no free lunch - gotta pay yer way" --> "TNFL-GPYW""
 
-function acronym(str) {
-    var space = false;
-    var newStr = "";
-    for (var i = 0 i<str.length; i++) {
-        if space == true
-        if (str[i] == ' ') {
-                space = true
-            }
-    }
+// function acronym(str) {
+//     var space = false;
+//     var newStr = "";
+//     for (var i = 0 i<str.length; i++) {
+//         if space == true
+//         if (str[i] == ' ') {
+//                 space = true
+//             }
+//     }
 
-    console.log(acronym("there's no free lunch - gotta pay yer way"));
+//     console.log(acronym("there's no free lunch - gotta pay yer way"));
 
 
     // Day two 
@@ -54,35 +54,34 @@ function acronym(str) {
     // every single opening parens has a closing
     // never hit an closing parens before a opening parens
     // ONLY care about the parens in the string
-
+   
     function parensValid(str) {
         var openParens = [];
         var closeParens = [];
-        for (var x = 0; x < str.length; x++) {
-            if (str[x] == "(") {
-                openParens.push(str[x]);
+          for (var x = 0; x < str.length; x++) {
+          if (str[x] == '(' ) {
+            openParens.push (str[x]);
             }
-            if (str[x] == ")") {
-                closeParens.push(str[x]);
+          if (str[x] == ')' ) {
+            closeParens.push (str[x]);
             }
-        }
-        if (openParens.length == closeParens.length){
+          }
+          if (openParens.length == closeParens.length) {
             return true;
-        }
-        console.log (openParens)
-        console.log (closeParens)
-        return false;
+          }
+          console.log (openParens)
+          console.log (closeParens)
+          return false;
     }
-    parensValid("y(3(p)p(3)r)s")
+    console.log (parensValid ("y(3(p)p(3)r)s"))
+// Given a string, returns whether the sequence of various parentheses, braces and brackets within it are valid. 
 
-    // Given a string, returns whether the sequence of various parentheses, braces and brackets within it are valid. 
+// Example 1: "({[({})]})" --> true
+// Example 2: "d(i{a}l[t]o)n{e!" --> false
+// Example 2: "{{[a]}}(){bcd}{()}" --> true
 
-    // Example 1: "({[({})]})" --> true
-    // Example 2: "d(i{a}l[t]o)n{e!" --> false
-    // Example 2: "{{[a]}}(){bcd}{()}" --> true
+// hint: consider using an array or object to solve
 
-    // hint: consider using an array or object to solve
-
-    function bracesValid(str) {
-        // your code here
-    }
+function bracesValid(str) {
+    // your code here
+}
