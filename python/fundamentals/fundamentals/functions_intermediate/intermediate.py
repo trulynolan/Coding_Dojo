@@ -24,7 +24,7 @@ print(sports_directory["soccer"][0])
 z[0]['y'] = 30
 print(z[0]['y'])
 
-# Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value. For example, given the following list:
+# 2 Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value. For example, given the following list:
 
 students = [
     {'first_name':  'Michael', 'last_name': 'Jordan'},
@@ -68,8 +68,9 @@ def printInfo(some_dict):
     print(len(some_dict['locations']), "LOCATIONS")
     for location in some_dict['locations']:
         print(location)
+    
     print(len(some_dict['instructors']), "INSTRUCTORS")
-    for location in some_dict['instructors']:
+    for instructors in some_dict['instructors']:
         print(instructors)
     
 dojo = {
