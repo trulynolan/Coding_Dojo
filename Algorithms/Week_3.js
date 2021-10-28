@@ -121,49 +121,49 @@ function isPalindrome(str) {
 
 
 
-    console.log(isPalindrome("racecar"));
-    console.log(isPalindrome("e tacocat e"));
-    console.log(isPalindrome("abba"));
-    console.log(isPalindrome("Dud"));
-    console.log(isPalindrome("oho!"));
-    console.log(isPalindrome(" to "));
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("e tacocat e"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("Dud"));
+console.log(isPalindrome("oho!"));
+console.log(isPalindrome(" to "));
 
 
 
-    // Use the longestPalindrome function below to receive a string and return the 
-    // longest palindrome it can find in the whole string.  Include spaces as well!
-    // If the palindromes have the same length, keep the one most recently found
+// Use the longestPalindrome function below to receive a string and return the 
+// longest palindrome it can find in the whole string.  Include spaces as well!
+// If the palindromes have the same length, keep the one most recently found
 
-    // Example 1: "my favorite racecar erupted" returns "e racecar e"
-    // Example 2: "nada" returns "ada"
-    // Example 3: "nothing to see" returns "ee"
-    // Example 4: "hello dada" returns "dad"
-    // Example 5: "not much" returns "n"
+// Example 1: "my favorite racecar erupted" returns "e racecar e"
+// Example 2: "nada" returns "ada"
+// Example 3: "nothing to see" returns "ee"
+// Example 4: "hello dada" returns "dad"
+// Example 5: "not much" returns "n"
 
-    // HINTS: 
-    // --Think of how you could have a way to take one letter in the string and compare it with the rest 
-    //   of the string.  Then take the next letter and keep comparing.  Loops maybe? **nudge nudge**
-    // --Think of a way to combine longestPalindrome with isPalindrome.  You already have the functionality
-    //   of checking if something is a Palindrome so see if you can use it!
+// HINTS: 
+// --Think of how you could have a way to take one letter in the string and compare it with the rest 
+//   of the string.  Then take the next letter and keep comparing.  Loops maybe? **nudge nudge**
+// --Think of a way to combine longestPalindrome with isPalindrome.  You already have the functionality
+//   of checking if something is a Palindrome so see if you can use it!
 
-    // The slice() method could be useful here, but if you find another way, great!
+// The slice() method could be useful here, but if you find another way, great!
 
-    // FYI: slice() can select a range of characters in a string starting at a given index position and ending 
-    //      with, but not including, the other given index. 
-    // For example "hello".slice(1,4) would return "ell".  
-    // It starts at index position 1 which is "e" and ends, but doesn't includes, index position 4 which is "l"
+// FYI: slice() can select a range of characters in a string starting at a given index position and ending 
+//      with, but not including, the other given index. 
+// For example "hello".slice(1,4) would return "ell".  
+// It starts at index position 1 which is "e" and ends, but doesn't includes, index position 4 which is "l"
 
-    function longestPalindrome(str) {
-      for (var i = 0; i < str.length; i++)
-        new_str = str.split("");
-      return new_str
-    }
+function longestPalindrome(str) {
+  for (var i = 0; i < str.length; i++)
+    new_str = str.split("");
+  return new_str
+}
 
-    console.log(longestPalindrome("my favorite racecar erupted"));
-    console.log(longestPalindrome("nada"));
-    console.log(longestPalindrome("nothing to see"));
-    console.log(longestPalindrome("hello dada"));
-    console.log(longestPalindrome("not much"));
+console.log(longestPalindrome("my favorite racecar erupted"));
+console.log(longestPalindrome("nada"));
+console.log(longestPalindrome("nothing to see"));
+console.log(longestPalindrome("hello dada"));
+console.log(longestPalindrome("not much"));
 
 
 // Day four
@@ -178,26 +178,46 @@ function isPalindrome(str) {
 // If it is, then you've found a range, if it's not, you haven't
 // You could create a string and add to it, or get rid of the values in the array that aren't needed 
 //   and convert to a string, or whatever way you come up with!
-var arr = [1,3,4,5,7,8,10,12,14,15,16,17]
+var arr = [1, 3, 4, 5, 7, 8, 10, 12, 14, 15, 16, 17]
 function bookIndex(arr) {
-	var temp = [];
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i]+1 == arr[i+1]) {
-			var start = arr[i];
-			while (arr[i]+1 == arr[i+1]) {
-				i++;
-			}
-		var end = arr[i];
-		temp.push(start + "-" + end);
-		} else {
-			temp.push(arr[i]);
-		}
-	}
-	var newstring = temp.join(',');
-	return newstring
+  var temp = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] + 1 == arr[i + 1]) {
+      var start = arr[i];
+      while (arr[i] + 1 == arr[i + 1]) {
+        i++;
+      }
+      var end = arr[i];
+      temp.push(start + "-" + end);
+    } else {
+      temp.push(arr[i]);
+    }
+  }
+  var newstring = temp.join(',');
+  return newstring
 }
 
 console.log(bookIndex(arr));
 
-console.log(bookIndex([1,3,4,5,7,8,10,12,14,15,16,17]))
+console.log(bookIndex([1, 3, 4, 5, 7, 8, 10, 12, 14, 15, 16, 17]))
 
+// 
+// i=3 [1,3,4,5,7,8,10,12,14,15,16,17] length = 12
+function bookIndex(arr){ 
+var str = "";
+if (arr[i + 1] === arr[i] + 1) {
+  var start = arr[i];
+  while (arr[i + 1] === arr[i] + 1) {
+    i++;
+  }
+  var end = arr[i];
+  str += start + "-" + end;
+}
+else {
+  str += arr[i];
+}
+if (i !== arr.length - 1) {
+  str += ", ";
+}
+}
+return str;
