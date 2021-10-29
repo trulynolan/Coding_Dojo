@@ -221,3 +221,39 @@ if (i !== arr.length - 1) {
 }
 }
 return str;
+
+// Day 5
+
+// Use the generateCoinChange function below to receive a dollar (decimal) amount with change. 
+// Covert that value to the number of quarters, dimes, nickels, and pennies it would have.
+// It should count the number or quarters first then work it's way down from there
+// This can return a string or an object or whatever you'd like
+
+// Example: generateCoinChange(.67) would return 2 quarters, 1 dime, 1 nickel, 2 pennies
+// Example: generateCoinChange(0.77) would return 3 quarters, 2 pennies
+// Example: generateCoinChange(2.85) would return 11 quarters, 1 dime
+// Example: generateCoinChange(4.57) would return 18 quarters, 1 nickel, 2 pennies
+
+function generateCoinChange(input){
+  var money = Math.floor(input*100);
+  var coins = {
+    "quarters":0,
+    "dimes":0,
+    "nickels":0,
+    "pennies":0
+  };
+  coins["quarters"] += Math.floor(money/25)
+  money = money % 25
+  coins["dimes"] += Math.floor(money/10)
+  money = money % 10
+  coins["nickels"] += Math.floor(money/5)
+  money = money % 5
+  coins["pennies"] += money
+  return coins
+
+}
+
+console.log(generateCoinChange(.67)) 
+console.log(generateCoinChange(0.77))
+console.log(generateCoinChange(2.85)) 
+console.log(generateCoinChange(4.57))  
