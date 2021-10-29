@@ -4,15 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    num=4
+    return render_template("hello.html", num=num)
 
-@app.route('/success')
-def success():
-    return "Success"
-
-@app.route('/hello/<string:banana>/<int:num>')
-def hello(banana, num):
-    return render_template("hello.html", banana=banana, num=num)
+@app.route('/hello/<int:num>')
+def hello(num):
+    return render_template("hello.html", num=num)
 
 if __name__ =="__main__":
     app.run(debug=True)
