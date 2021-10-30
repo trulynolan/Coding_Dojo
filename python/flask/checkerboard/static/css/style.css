@@ -1,0 +1,20 @@
+
+h1 {
+    color: rgb(67, 143, 224);
+}
+
+.row {
+    display: flex;
+}
+
+.square0 {
+    height: 30px;
+    width: 30px;
+    background-color: rebeccapurple;
+}
+
+.square1 {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(51, 153, 126);
+}
