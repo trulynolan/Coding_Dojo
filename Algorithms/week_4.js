@@ -209,3 +209,51 @@ new_sll.addToBack("Times Square");
 console.log(new_sll.display());
 
 ... (7 lines left)
+
+
+
+// Day 3
+
+moveMinToFront() {
+    var runner = this.head.next;
+    var creeper = this.head;
+    var min = this.head;
+    var before_min = this.head;
+    while (runner != null) {
+            if(runner.value < min.value){
+                min = runner;
+                before_min = creeper;
+            }
+        runner = runner.next;
+        creeper = creeper.next;
+    }
+    before_min.next = min.next;
+    min.next = this.head;
+    this.head = min;
+    return min
+}
+
+moveMaxToBack(){
+    var max = this.head
+    var creeper
+    let runner = this.head
+    while (runner.next != null){
+        if(runner.next.value > max.value){
+            max = runner.next
+            creeper = runner
+        }
+        runner = runner.next
+    }
+    if(max == runner){
+        console.log("the max is already at the back!")
+        return
+    }
+
+    if(max == this.head){
+        this.head = this.head.next
+    }
+    
+    creeper.next = max.next
+    max.next = null
+    runner.next = max
+}
