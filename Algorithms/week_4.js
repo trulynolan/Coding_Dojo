@@ -257,3 +257,9 @@ moveMaxToBack(){
     max.next = null
     runner.next = max
 }
+
+
+
+
+
+
