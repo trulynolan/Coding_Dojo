@@ -25,3 +25,27 @@ def createUser():
 def showUsers():
     users = User.get_all()
     return render_template('showusers.html', users = users)
+
+@app.route ('/showuser/<int:id>')
+def showeuser(id):
+    data = {'id': id}
+    user = User.get_user(data)
+    return render_template('show.html', user = user)
+
+@app.route ('/edituser/<int:id>')
+def edituser(id):
+    data = {'id': id}
+    user = User.get_user(data)
+    return render_template ('edit.html', user = user)
+
+
+@app.route ('/edit_user/<int:id>', methods=['post'])
+def editUser(id):
+    data = {
+        'id': id,
+        'first_name': request.form ['first_name'],
+        'last_name': request.form ['last_name'],
+        'email': request.form ['email']
+    }
+    User.updating (data)
+    return redirect ('/showUsers')

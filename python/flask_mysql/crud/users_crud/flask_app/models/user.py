@@ -22,3 +22,14 @@ class User:
             new_user = cls(user)
             users.append(new_user)
         return users
+
+    @classmethod 
+    def get_user(cls, data):
+        query = "select * from users where id = %(id)s"
+        query_results = connectToMySQL ("user_schema").query_db(query, data)
+        return cls (query_results[0])
+
+    @classmethod 
+    def updating (cls, data):
+        query = "update users set first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s where id = %(id)s"
+        return connectToMySQL("user_schema").query_db(query,data)

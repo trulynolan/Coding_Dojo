@@ -15,15 +15,15 @@
             <th>Email</th>
             <th>Created At
             </th>
+            <th>Actions</th>
         </tr>
-        {% for u in users %}
         <tr>
-            <td>{{u.id}}</td>
-            <td>{{u.first_name}}</td>
-            <td>{{u.last_name}}</td>
-            <td>{{u.created_at}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.created_at}}</td>
+            <td> <a href="#">Show</a> <a href="#">Edit</a> <a href="#">Delete</a></td>
         </tr>
-        {% endfor %}
     </table>
     <a href="/newuser">Add a new User</a>
 </body>

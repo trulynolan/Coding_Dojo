@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users_CR</title>
+</head>
+<body>
+    <p>Edit User</p>
+    <form action="/edit_user/{{user.id}}" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value={{user.first_name}}>
+        <label for="last_name">Last name:</label>
+        <input type="text" name="last_name" value={{user.last_name}}>
+        <label for="email">Email:</label>
+        <input type="text" name="email" value={{user.email}}>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
+
