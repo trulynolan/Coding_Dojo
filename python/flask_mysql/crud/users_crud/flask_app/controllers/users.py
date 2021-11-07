@@ -49,3 +49,9 @@ def editUser(id):
     }
     User.updating (data)
     return redirect ('/showUsers')
+ 
+@app.route ('/deleteuser/<int:id>')
+def deleteUser(id):
+    data = {'id': id}
+    User.delete (data)
+    return redirect ('/showUsers')
