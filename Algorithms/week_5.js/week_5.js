@@ -1,82 +1,149 @@
-// Week 5 algorithms
-// // Today we will be creating a stack using an array inside of the class ArrayStack's constructor
-// A Stack operates on the principal of "First In, Last Out" 
-// An example of this would be cement blocks placed on top of each other (or ABC stacking blocks)
-//    I can't remove the first block placed down until all the other ones on top have been removed
-// Another example would be chips in a Pringles can (: 
-//    The chip that I will be eating last was the chip placed in the can first
-// If it's placed in first, it's on the bottom, it can't be removed until everything else above it has been removed
-// Remember, in the world exists JavaScript array methods.  They can be very helpful (:
-
-class ArrayStack {
+// This is creating the stack itself.  
+// Head is where things get added (beginning) to the stack so it's the top
+// Tail is the last thing that needs to be removed so it's at the bottom
+// The order of the stack will go from right (1st Node) to left (last node)   
+// For example:   3rd Node (head) - 2nd Node - 1st Node (tail)
+class SLLStack {
     constructor() {
-        this.contents = []
+        this.head = null;
+        this.tail = null;
     }
-    // Use add(value) - adds the given value to the stack in the array
-    // Return the stack (array)
-    // Since this is using a stack structure, where should the added item go?  Front or back?
-    add(value) {
-        this.contents[this.contents.length-1] = value;
-        this.bottom++;
+
+    // Use add(value) to add something ot the top (head) of the stack 
+    // Return the added node's value
+    // HINTS - Need to create the node before you can add it
+    // Remember to connect the node to the top of the stack first and then name it the new head
+    // Edge Case - what if the list is empty?
+    add(value) {        
+        var node = new ListNode(value);
+        
+        if (this.head == null) {
+            this.head = node;
+            this.tail = node;
+        }
+        else {
+            node.next = this.head;
+            this.head = node;
+        }
+        return node.value
     }
     
 
-    // Use remove() to remove the top value from the stack 
-    // Return the stack after the top value has been removed
-    // We are using a stack structure, so where should the item be removed from? Front (bottom) or back (top)?
+    // Use remove() to take away the node on top of the stack 
+    // Return the removed node's value
+    // HINTS - The head is the top of the stack
+    // We need to save the head in a var before we remove it so we can return it's value
+    // Name the new head and then cut the connection to the old head
+    // Edge Cases - what if the list is empty?  What if there's only one node in the list?
     remove() {
-        this.contents.pop()
-        this.top --;
+        if (this.head == null){
+            return undefined;
+        }
+        else if (this.head == this.tail) {
+            var temp = this.head;
+            this.head = null;
+            this.tail = null;
+            return temp.value;
+        }
+
+        var temp = this.head
+        this.head = this.head.next
+        temp.next = null
+
+        return temp.value
     }
-    
-    // Use top() to return the top value of the stack WITHOUT removing it
-    // This should not affect or change the stack in any way
+
+    // Use top() to return the value of the top node of the stack without removing it
+    // Edge Case - What if the list is empty?
     top() {
-       return this.contents[this.contents.length-1];
+        if (this.head == null) {
+            return undefined;
+        }
+        return this.head.value
     }
 
-    // Use contains(value) to search the stack for a value
-    // Return true if the value exists in the stack or return false if it doesn't
-    contains(target) {
-       for(var i=0;i<this.top;i++){
-           if(this.contents[i]==target){
-               return true;
-           }
-       }
-       return false
+    // Use contains(value) to search the stack for a received value
+    // Return true if the value is in the stack, return false if it's not
+    // There are no built in "stack" methods like "includes" in JS 
+    // So how do we go through a whole stack?  Wanna go for a run....? (:
+    contains(value) {
+        var runner = this.head;
+
+        while (runner != null) {
+            if (runner.value == value) {
+                return true;
+            }
+            runner = runner.next;
+        }
+        return false;
     }
 
-    // Use isEmpty() to check to see if the stack is empty
-    // Return true if the stack is empty or return false if it isn't
+    // Use isEmpty() to see if the stack is empty
+    // Return true if the stack is empty, return false if it's not
     isEmpty() {
-        if(this.contents.length){
+        if (this.head == null){
             return true
         }
-        return false
+        else {
+            return false
+        }
     }
 
-    // Use size() to return the amount of items in the stack
-    // Does this require a loop?
+    // Use size() to count all the nodes in the stack
+    // Return the total number of nodes the stack
+    // Edge Case - What if the list is empty?
     size() {
-        return this.contents.length;
+        var count = 0
+
+        if (this.head == null) {
+            return count
+        }
+        else {
+            var runner = this.head
+            while (runner != null){
+                count++
+                runner = runner.next
+            }
+            return count
+        }
+    }
+    // This is given to you for your convenience, nothing to do here (:
+    display() {
+        if (this.head == null) {
+            return null;
+        }
+        var values = this.head.value;
+        var runner = this.head.next;
+
+        while (runner != null) {
+            values += " - " + runner.value;
+            runner = runner.next;
+        }
+        return values;
     }
 }
 
-//Stack those ABC blocks!
-var stack = new ArrayStack();
+var x = new SLLStack();
 
-console.log(stack.isEmpty());
-console.log(stack.add("A"));
-console.log(stack.isEmpty());
-console.log(stack.add("B"));
-console.log(stack.add("C"));
-console.log(stack.top());
-console.log(stack.remove());
-console.log(stack.remove());
-console.log(stack.add("D"));
-console.log(stack.top());
-console.log(stack.add("E"));
-console.log(stack.add("F")); 
-console.log(stack.size());
-console.log(stack.contains("A"));
-console.log(stack.contains("Z"));
+console.log(x.isEmpty());
+console.log(x.add("A"));
+console.log(x.display());
+console.log(x.isEmpty());
+
+console.log(x.add("B"));
+console.log(x.add("C"));
+console.log(x.display());
+console.log(x.top());
+
+console.log(x.remove());
+console.log(x.remove());
+console.log(x.display());
+
+console.log(x.add("D"));
+console.log(x.add("E"));
+console.log(x.display());
+console.log(x.top());
+console.log(x.size());
+console.log(x.contains("E"));
+console.log(x.contains("Z"));
+
