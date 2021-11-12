@@ -7,18 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Seattle Ninjas</h1>
+    <h1>Ninjas</h1>
     <table width="500" border="1">
         <tr>
+            <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Age</th>
         </tr>
+        {% for n in ninja_display.ninjas %}
         <tr>
-            <td>Stuff will go here.</td>
-            <td></td>
-            <td></td>
+            <td>{{n.id}}</td>
+            <td>{{n.first_name}}</td>
+            <td>{{n.last_name}}</td>
+            <td>{{n.age}}</td>
         </tr>
+        {% endfor %} 
     </table>
 </body>
 </html>

@@ -8,17 +8,20 @@
 </head>
 <body>
     <h1>New Ninja</h1>
-    <form action="">
-        <select name="" id="dojo">
-            <option value="">HOLY HECK</option>
+    <form action="/create_ninja" method = "post">
+        <label for="dojos">Dojos</label>
+        <select name="dojo_id" id="dojo">
+            {% for d in dojos %}
+            <option value="{{d.id}}">{{d.name}}</option>
+            {% endfor %}
         </select>
-        <label for="first_name">First Name</label>
+        <label name="first_name">First Name</label>
         <input type="text" name = "first_name">
-        <label for="last_name">Last Name</label>
+        <label name="last_name">Last Name</label>
         <input type="text" name = "last_name">
-        <label for="age">Age</label>
+        <label name="age">Age</label>
         <input type="text" name = "age">
-        <button type="submit">Create</button>
+        <button type="submit" >Create</button>
     </form>
 </body>
 </html>

@@ -7,19 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>New Dojo!?</h1>
-    <form action="">
+    <h1>New Dojo</h1>
+    <form action="/createDojo" method="post">
         <label for="name">Name</label>
         <input type="text" name = "name">
         <button type="submit">Create</button>
     </form>
-    <h2>All Dojos</h2>
+    <h2>All Ninjas</h2>
     <table>
+        {% for n in ninjas %}
         <tr>
-            <p>Dad?</p>
+            <td>  
+                <a href="/ninja_display/{{n.id}}">{{n.first_name}}</a>
+            <td>
+                <a href="/ninja_display/{{n.id}}">{{n.last_name}}</a>
+            </td>
+            <td>
+                <p>
+                    {{n.dojos.name}}
+                </p>
+            </td>
         </tr>
-        
+        {% endfor %}
     </table>
-    <a href="">Add Ninja!</a>
+    <a href="/new_ninja">Add Ninja!</a>
 </body>
 </html>
