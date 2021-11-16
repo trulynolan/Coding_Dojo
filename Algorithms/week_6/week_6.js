@@ -49,3 +49,25 @@ function recursiveFibonacci(num) {
     return num + recursiveFibonacci(num - (num-1))
 }
 recursiveFibonacci(13) 
+
+// Day 2
+
+function recursiveGreatestCommonFactor(num1,num2){
+    if (num1 == num2) {
+      return num1;
+    }
+  
+    if (num1 > num2) {
+      return recursiveGreatestCommonFactor ((num1-num2), num2)
+    }
+    if (num2 > num1) {
+      return recursiveGreatestCommonFactor (num1, (num2-num1))
+    }
+  }
+  
+  console.log(recursiveGreatestCommonFactor(50,180)); // 10
+  console.log(recursiveGreatestCommonFactor(7,35)); // 7
+  console.log(recursiveGreatestCommonFactor(65,95)); // 5
+  console.log(recursiveGreatestCommonFactor(123456,987654)); // 6
+  console.log(recursiveGreatestCommonFactor(102,2000)); // 2
+  console.log(recursiveGreatestCommonFactor(7,13)); // 1
