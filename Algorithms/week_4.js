@@ -105,8 +105,8 @@ class SinglyLinkedList {
 
 class ListNode {
     constructor(value) {
-      this.value = value;
-      this.next = null;
+        this.value = value;
+        this.next = null;
     }
 }
 
@@ -151,7 +151,7 @@ class SinglyLinkedList {
         }
         return false;
     }
-    
+
     display() {
         if (this.head == null) {
             return null;
@@ -193,7 +193,7 @@ class SinglyLinkedList {
 
     removeBack() {
         var runner = this.head;
-        while(runner.next.next) {
+        while (runner.next.next) {
             runner = runner.next;
         }
         this.tail = runner;
@@ -220,10 +220,10 @@ moveMinToFront() {
     var min = this.head;
     var before_min = this.head;
     while (runner != null) {
-            if(runner.value < min.value){
-                min = runner;
-                before_min = creeper;
-            }
+        if (runner.value < min.value) {
+            min = runner;
+            before_min = creeper;
+        }
         runner = runner.next;
         creeper = creeper.next;
     }
@@ -237,22 +237,22 @@ moveMaxToBack(){
     var max = this.head
     var creeper
     let runner = this.head
-    while (runner.next != null){
-        if(runner.next.value > max.value){
+    while (runner.next != null) {
+        if (runner.next.value > max.value) {
             max = runner.next
             creeper = runner
         }
         runner = runner.next
     }
-    if(max == runner){
+    if (max == runner) {
         console.log("the max is already at the back!")
         return
     }
 
-    if(max == this.head){
+    if (max == this.head) {
         this.head = this.head.next
     }
-    
+
     creeper.next = max.next
     max.next = null
     runner.next = max
@@ -261,28 +261,28 @@ moveMaxToBack(){
 
 
 
-    // Day 4
+// Day 4
 
-    //Use appendValue(loc,value) to receive a location in the list and a value
-    //Add that value AFTER the location
-    //EXAMPLE: appendValue(2,"Las Vegas") - will add a node with a value of "Las Vegas" AFTER the 2nd node, making it the 3rd
-    //HINTS: You'll need a way to see when you've arrived at that location.  Some sort of counter maybe? (:
-    //Once the runner has arrived, attach the node's next property to the runner's next
-    //Then attach the runner's next property to the node you just placed into the list
-    appendValue(loc,value){
-        var runner = this.head
-        var location = 1
-        while (runner.next != null){
-            runner = runner.next
-            location += 1
-            if(location = loc){
-               var fomo = runner.next
-                runner.next = value
-                value.next = fomo
-            }
+//Use appendValue(loc,value) to receive a location in the list and a value
+//Add that value AFTER the location
+//EXAMPLE: appendValue(2,"Las Vegas") - will add a node with a value of "Las Vegas" AFTER the 2nd node, making it the 3rd
+//HINTS: You'll need a way to see when you've arrived at that location.  Some sort of counter maybe? (:
+//Once the runner has arrived, attach the node's next property to the runner's next
+//Then attach the runner's next property to the node you just placed into the list
+appendValue(loc, value){
+    var runner = this.head
+    var location = 1
+    while (runner.next != null) {
+        runner = runner.next
+        location += 1
+        if (location = loc) {
+            var fomo = runner.next
+            runner.next = value
+            value.next = fomo
         }
-        return
     }
+    return
+}
 
 //     //Use prependValue(loc,value) to receive a location in the list and a value
 //     //Add that value BEFORE the location
@@ -291,13 +291,13 @@ moveMaxToBack(){
 //     //Once the runner has arrived one before, attach the node's next property to the runner's next
 //     //Then attach the runner's next property to the node you just placed into the list
 //     prependValue(loc,value){
-        
+
 //     }
 // }
 
 appendValue(loc, value) {
     var new_node = new ListNode(value);
-    
+
     if (this.head === null) {
         this.head = new_node;
     }
@@ -340,57 +340,57 @@ new_sll.addToBack("Times Square");
 new_sll.addToBack("Mount Rushmore");
 console.log(new_sll.display());
 
-new_sll.appendValue(3,"Universal Studios")
+new_sll.appendValue(3, "Universal Studios")
 console.log(new_sll.display());
 
-new_sll.prependValue(3,"Smithsonian")
+new_sll.prependValue(3, "Smithsonian")
 console.log(new_sll.display());
 
 
 // Use findMinNode() to find the node in the linked list with the lowest value
-    // Return the node ITSELF, not its value 
-    // If you find two or more nodes tied for that value, return the first one you find
-    findMinNode(){
-        var min = this.head 
-        var runner = this.head 
-        
-        while(runner.next != null){ 
-            if(runner.next.value < min.value){ 
-                min = runner.next 
-            }            
-            runner = runner.next     
+// Return the node ITSELF, not its value 
+// If you find two or more nodes tied for that value, return the first one you find
+findMinNode(){
+    var min = this.head
+    var runner = this.head
+
+    while (runner.next != null) {
+        if (runner.next.value < min.value) {
+            min = runner.next
         }
-        return min
+        runner = runner.next
     }
+    return min
+}
 
 //     // Use findMaxNode() to find the node in the linked list with the highest value
 //     // Return the node ITSELF, not its value
 //     // if you find two or more nodes tied for that value, return the first one you find
 //     findMaxNode(){
-    findMaxNode(){
-        var max = this.head 
-        var runner = this.head 
-        
-        while(runner.next != null){ 
-            if(runner.next.value > max.value){ 
-                max = runner.next 
-            }            
-            runner = runner.next     
+findMaxNode(){
+    var max = this.head
+    var runner = this.head
+
+    while (runner.next != null) {
+        if (runner.next.value > max.value) {
+            max = runner.next
         }
-        return maxx
+        runner = runner.next
     }
+    return maxx
+}
 //     }
 
 //     // Use secondToLast() to return the VALUE of the second-to-last node in the linked list
 //     // HINTS: You could do this with or without a tail.  Choose whichever (:
 //     // Edge Case: What should you do if the list has less than two nodes?
-    secondToLast(){
-        var runner = this.head
-        while(runner.next != this.tail){
-            runner = runner.next
-        }
-        return runner
+secondToLast(){
+    var runner = this.head
+    while (runner.next != this.tail) {
+        runner = runner.next
     }
+    return runner
+}
 //    }
 // 
 
@@ -411,34 +411,34 @@ console.log(new_sll.secondToLast())
 
 
 findMinNode(){
-    var min = this.head 
-    var runner = this.head 
-    
-    while(runner.next != null){ 
-        if(runner.next.value < min.value){ 
-            min = runner.next 
-        }            
-        runner = runner.next     
+    var min = this.head
+    var runner = this.head
+
+    while (runner.next != null) {
+        if (runner.next.value < min.value) {
+            min = runner.next
+        }
+        runner = runner.next
     }
     return min
 }
 
 findMaxNode(){
-    var max = this.head 
-    var runner = this.head 
-    
-    while(runner.next != null){ 
-        if(runner.next.value > max.value){ 
-            max = runner.next 
-        }            
-        runner = runner.next     
+    var max = this.head
+    var runner = this.head
+
+    while (runner.next != null) {
+        if (runner.next.value > max.value) {
+            max = runner.next
+        }
+        runner = runner.next
     }
     return max
 }
 
 secondToLast(){
     var runner = this.head
-    while(runner.next != this.tail){
+    while (runner.next != this.tail) {
         runner = runner.next
     }
     return runner
