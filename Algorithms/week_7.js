@@ -1,5 +1,7 @@
 // First week of JAVA! But first, algos.
 
+// Monday
+
 // Balanced point and balanced index
 
 // balancePoint(arr)
@@ -82,3 +84,39 @@ console.log(balancePoint([1,2,3,4,10])) // TRUE
 console.log(balancePoint([1,2,3,2,1])) // FALSE
 console.log(balancePoint([1,2,3,1,2,3,2,1])) // FALSE
 console.log(balancePoint([2,2])) // TRUE
+
+
+//  Tuesday
+
+// Binary Search
+
+// Given a sorted array and a value, return whether
+//  the array contains that value. Do not sequentially 
+//  iterate the array. Instead 'divide and conquer'. 
+//  Taking advantage of the fact that array is sorted. 
+
+
+function binarySearch(arr, val) {
+  let start = 0;
+  let end = arr.length - 1;
+
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === val) {
+      return true;
+    }
+
+    if (val < arr[mid]) {
+      end = mid - 1;
+    } else {
+      start = mid + 1;
+    }
+  }
+  return false;
+}
+
+console.log(binarySearch([1,2,3,4,5,6,7,8,10], 9));
+// ---> 1 2 3 4 5  |  6 7 8 9 10
+// ---> 6 7  |  8 9 10
+// ---> 8  [9]  10  (found)
