@@ -120,3 +120,90 @@ console.log(binarySearch([1,2,3,4,5,6,7,8,10], 9));
 // ---> 1 2 3 4 5  |  6 7 8 9 10
 // ---> 6 7  |  8 9 10
 // ---> 8  [9]  10  (found)
+
+
+
+
+
+
+
+
+// Remove duplicates
+// Wednesday
+
+// Try to accomplish this without creating another array. 
+
+// GIVEN AN ARRAY, RETURN ARRAY WITHOUT DUPLICATES
+// [1,2,1,3,4,2] => [1,2,3,4]
+
+// CHALLENGE RETURN THE SAME ARRAY
+
+
+
+
+function removeDupe(arr) {
+    var dad = []
+    for (var i = 0; i < arr.length; i++){
+        for (var j = i+1; j < arr.length; j++){
+            console.log("arr[i]" + arr[i])
+            console.log("arr[j]" + arr[j])
+            if (arr[j] != arr[i]){
+                dad.push(arr[i])
+                console.log("HEY MAN")
+        }
+    }
+    }
+    return dad
+}
+
+console.log(removeDupe([8, 9, 9, 10, 2, 2, 34]))
+
+
+
+
+
+
+
+
+// The actual solution.
+
+function removeDupe(arr) {
+    
+    for (var i = 0; i < arr.length; i++){
+        for (var j = i+1; j < arr.length; j++){
+            console.log("arr[i]" + arr[i])
+            console.log("arr[j]" + arr[j])
+            if (arr[j] === arr[i]){
+                arr.splice(j, 1)
+        }
+    }
+    }
+    return arr
+}
+
+console.log(removeDupe([8, 9, 9, 10, 2, 2, 34]))
+
+// The actual solution ^^^^^^^^^^^^
+
+
+
+
+
+
+
+
+// 
+
+
+
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+  
+  // usage example:
+  var a = [1,2,1,3,4,2];
+  var unique = a.filter(onlyUnique);
+  
+  console.log(unique); 
+
+
