@@ -18,30 +18,30 @@ Balance Point and Balance Index!!!
 // WRITE A FUNCTION THAT RETURNS WHETHER THE GIVEN ARRAY HAS A BALANCE POINT BETWEEN THE VALUES
 // WHERE ONE SIDE IS EQUAL TO THE OTHER
 
-function balancePoint(arr){
-    for(var i = 0; i < arr.length; i++){
-        for(var j = 0; j = i; j++){
+function balancePoint(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j = i; j++) {
             var sum1 = 0
-            sum1 =+ arr[j]
+            sum1 = + arr[j]
         }
-        for(var k = arr.length-1; k = i; k--){
+        for (var k = arr.length - 1; k = i; k--) {
             var sum2 = 0
-            sum2 =+ arr[k]
+            sum2 = + arr[k]
         }
     }
 }
 
-function balancePoint(arr){
-    for(var i = 0; i < arr.length; i++){
+function balancePoint(arr) {
+    for (var i = 0; i < arr.length; i++) {
         var placeholder = arr[0]
-        for(var j = arr.length-1; j=i; j--){
-            if( i !=j){
+        for (var j = arr.length - 1; j = i; j--) {
+            if (i != j) {
                 arr[j] += 
             }
         }
     }
 }
-console.log(balancePoint([1,2,3,4,10])) // TRUE
+console.log(balancePoint([1, 2, 3, 4, 10])) // TRUE
 // ---> 1+2+3+4 = 10     10 == 10 so balanced
 // console.log(balancePoint([1,2,3,2,1])) // FALSE
 // console.log(balancePoint([1,2,3,1,2,3,2,1])) // FALSE
@@ -58,19 +58,19 @@ function balanceIndex(arr) {
 
 // Other solution
 
-function balancePoint(arr){
+function balancePoint(arr) {
     var sum = arr[0];
     var arrSum = 0;
-    for(var i = arr.length-1; i > 0; i --) {
+    for (var i = arr.length - 1; i > 0; i--) {
         arrSum += arr[i]
-        for(var j = 1; j < arr.length; j++) {
-            if(arr[2] == null) {
-                if(sum = arrSum){
+        for (var j = 1; j < arr.length; j++) {
+            if (arr[2] == null) {
+                if (sum = arrSum) {
                     return true
                 }
             }
             sum += arr[j]
-            if(arrSum == sum) {
+            if (arrSum == sum) {
                 return true
             }
         }
@@ -78,12 +78,12 @@ function balancePoint(arr){
     return false
 }
 
-console.log(balancePoint([2,2,4]))
-console.log(balancePoint([1,2,3,4,10])) // TRUE
+console.log(balancePoint([2, 2, 4]))
+console.log(balancePoint([1, 2, 3, 4, 10])) // TRUE
 // ---> 1+2+3+4 = 10     10 == 10 so balanced
-console.log(balancePoint([1,2,3,2,1])) // FALSE
-console.log(balancePoint([1,2,3,1,2,3,2,1])) // FALSE
-console.log(balancePoint([2,2])) // TRUE
+console.log(balancePoint([1, 2, 3, 2, 1])) // FALSE
+console.log(balancePoint([1, 2, 3, 1, 2, 3, 2, 1])) // FALSE
+console.log(balancePoint([2, 2])) // TRUE
 
 
 //  Tuesday
@@ -97,26 +97,26 @@ console.log(balancePoint([2,2])) // TRUE
 
 
 function binarySearch(arr, val) {
-  let start = 0;
-  let end = arr.length - 1;
+    let start = 0;
+    let end = arr.length - 1;
 
-  while (start <= end) {
-    let mid = Math.floor((start + end) / 2);
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
 
-    if (arr[mid] === val) {
-      return true;
+        if (arr[mid] === val) {
+            return true;
+        }
+
+        if (val < arr[mid]) {
+            end = mid - 1;
+        } else {
+            start = mid + 1;
+        }
     }
-
-    if (val < arr[mid]) {
-      end = mid - 1;
-    } else {
-      start = mid + 1;
-    }
-  }
-  return false;
+    return false;
 }
 
-console.log(binarySearch([1,2,3,4,5,6,7,8,10], 9));
+console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 10], 9));
 // ---> 1 2 3 4 5  |  6 7 8 9 10
 // ---> 6 7  |  8 9 10
 // ---> 8  [9]  10  (found)
@@ -143,15 +143,15 @@ console.log(binarySearch([1,2,3,4,5,6,7,8,10], 9));
 
 function removeDupe(arr) {
     var dad = []
-    for (var i = 0; i < arr.length; i++){
-        for (var j = i+1; j < arr.length; j++){
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
             console.log("arr[i]" + arr[i])
             console.log("arr[j]" + arr[j])
-            if (arr[j] != arr[i]){
+            if (arr[j] != arr[i]) {
                 dad.push(arr[i])
                 console.log("HEY MAN")
+            }
         }
-    }
     }
     return dad
 }
@@ -168,15 +168,15 @@ console.log(removeDupe([8, 9, 9, 10, 2, 2, 34]))
 // The actual solution.
 
 function removeDupe(arr) {
-    
-    for (var i = 0; i < arr.length; i++){
-        for (var j = i+1; j < arr.length; j++){
+
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
             console.log("arr[i]" + arr[i])
             console.log("arr[j]" + arr[j])
-            if (arr[j] === arr[i]){
+            if (arr[j] === arr[i]) {
                 arr.splice(j, 1)
+            }
         }
-    }
     }
     return arr
 }
@@ -198,13 +198,13 @@ console.log(removeDupe([8, 9, 9, 10, 2, 2, 34]))
 
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
-  }
-  
-  // usage example:
-  var a = [1,2,1,3,4,2];
-  var unique = a.filter(onlyUnique);
-  
-  console.log(unique); 
+}
+
+// usage example:
+var a = [1, 2, 1, 3, 4, 2];
+var unique = a.filter(onlyUnique);
+
+console.log(unique);
 
 
 // Thursday algos
@@ -228,3 +228,53 @@ function onlyUnique(value, index, self) {
 
 
 // Write a function in order to make the robots meet each other. Robots will be executing the same copy of this function.
+
+
+// Friday!
+
+// Matrix Search
+
+var big = [
+    [67, 34, 45, 56],
+    [98, 87, 76, 65],
+    [56, 67, 78, 89],
+    [54, 43, 32, 21]
+];
+
+var small = [
+    [67, 78],
+    [43, 32]
+];
+
+var anotherSmall = [
+    [67, 7],
+    [43, 32]
+];
+
+
+function matrixSearch(larger, smaller) {
+    for (var i = 0; i < smaller.length; i++) {
+        for (var j = 0; j < smaller[i].length; j++) {
+            console.log(smaller[i])
+            for (var k = 0; k < larger.length; k++) {
+                for (var l = 0; l < larger[k].length; l++) {
+                    if (smaller[i][j] == larger[k][l]) {
+                        return true
+                    }
+                }
+            }
+        }
+    }
+}
+    console.log(matrixSearch(big, small))
+    console.log(matrixSearch(big, anotherSmall))
+
+
+
+//     for(var i = 0; i < small.length; i++){
+//         if(big.includes(small[i])){
+//             console.log(small[i])
+//         }
+//     }
+// }
+
