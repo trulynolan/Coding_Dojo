@@ -22,7 +22,7 @@ public class ItemController {
      fruits.add(new Item("Guava", .75));
      
      // Add fruits your view model here
-     
+     model.addAttribute("fruit", fruits);
      return "index.jsp";
  }
 }

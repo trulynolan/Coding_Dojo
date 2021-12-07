@@ -8,8 +8,24 @@
 <title>Hey this is the title.</title>
 </head>
 <body>
-		<c:forEach var="person" items="${people}">
-    		<c:out value="${person.name}"/>
-</c:forEach>
+<div class="container">
+		<h1>Fruit Store</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="fruit" items="${fruit}">
+				<tr>
+					<td><c:out value="${fruit.name}"></c:out></td>
+					<td><c:out value="${fruit.price}"></c:out></td>
+				</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
