@@ -164,3 +164,23 @@ newList.populateChildren();
 newList.printMeWithChildren();
 newList.flattenChildren();
 newList.printMe();
+
+
+
+// You have a 3-gallon and a 5-gallon jug that you can fill from a fountain of water.
+// The problem is to fill one of the jugs with exactly 4 gallons of water. How do you do it?
+
+
+
+
+
+// This “burning rope” problem is a classic logic puzzle. You have two ropes that each take an hour to burn,
+//  but burn at inconsistent rates. How can you measure 45 minutes?
+
+
+
+// There are three boxes, one contains only apples, one contains only oranges, 
+// and one contains both apples and oranges. The boxes have been incorrectly 
+// labeled such that no label identifies the actual contents of its box. 
+// Opening just one box, and without looking in the box, you take out one piece of fruit. 
+// By looking at the fruit, how can you immediately label all of the boxes correctly?
