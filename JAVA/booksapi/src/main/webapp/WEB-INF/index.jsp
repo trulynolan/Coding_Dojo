@@ -21,11 +21,37 @@
                             crossorigin="anonymous">
                     </head>
 
-                    <body>
-					
-					
-					
-					
-                    </body>
+<body>
+    <table  class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Number of Pages</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <c:forEach var = "i" items = "${books}" >
+                    <tr>
+                        <td> <c:out value="${i.id}"></c:out></td>
+                        <td> <c:out value="${i.title}"></c:out></td>
+                        <td> <c:out value="${i.description}"></c:out></td>
+                        <td> <c:out value="${i.language}"></c:out></td>
+                        <td> <c:out value="${i.numberOfPages}"></c:out></td>
+                        <td> <a href="/books/${i.id}" >Show </a>  <a href="" > Edit </a>  <a href="/delete/${i.id}" > Delete </a></td>
+                    </tr>
+
+
+
+                </c:forEach>
+
+                 <!-- loop over all the books to show the details as in the wireframe! -->
+            </tbody>
+        </table>
+</body>
 
                     </html>
