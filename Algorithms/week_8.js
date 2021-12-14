@@ -17,7 +17,7 @@ class SLL {
         this.head = node;
         return this;
     }
-// print out the SLL
+    // print out the SLL
     display() {
         let result = "";
         let runner = this.head;
@@ -51,8 +51,8 @@ sl1.reverseSSL().display();
 
 //  Tuesday
 
-class Node{
-    constructor(val){
+class Node {
+    constructor(val) {
         this.val = val;
         this.next = null; // node (.val, .next)
         //THIS IS NEW
@@ -60,21 +60,21 @@ class Node{
     }
 }
 
-class SLL{
-    constructor(){
+class SLL {
+    constructor() {
         this.head = null;
     }
 
-    addToFront(val){
+    addToFront(val) {
         let newNode = new Node(val);
         newNode.next = this.head;
         this.head = newNode;
     }
 
-    printMe(){
+    printMe() {
         let returnStr = '';
         let runner = this.head;
-        while(runner != null){
+        while (runner != null) {
             returnStr += `${runner.val} -> `;
             runner = runner.next;
         }
@@ -83,15 +83,15 @@ class SLL{
     }
 
     //populates each node with a random amount of children from 0 to 4
-    populateChildren(){
+    populateChildren() {
 
         let runner = this.head;
 
-        while(runner !== null){
+        while (runner !== null) {
             let numChildren = Math.floor(Math.random() * 5);
-            if(numChildren !== 0){
+            if (numChildren !== 0) {
                 let childList = new SLL();
-                for(let i = 0; i < numChildren; ++i){
+                for (let i = 0; i < numChildren; ++i) {
                     childList.addToFront(Math.floor(Math.random() * 50));
                 }
                 runner.child = childList;
@@ -100,15 +100,15 @@ class SLL{
         }
     }
 
-    printMeWithChildren(){
+    printMeWithChildren() {
         let returnStr = '';
         let runner = this.head;
-        while(runner != null){
+        while (runner != null) {
             returnStr += `${runner.val}`;
-            if(runner.child){
+            if (runner.child) {
                 returnStr += "(";
                 let runner2 = runner.child.head;
-                while(runner2 !== null){
+                while (runner2 !== null) {
                     returnStr += `${runner2.val} ->`;
                     runner2 = runner2.next;
                 }
@@ -138,11 +138,11 @@ class SLL{
         arrange .next pointers to "flatten" the hierarchy into one linear
         list, from head through all others via .next
     */
-    flattenChildren(){
+    flattenChildren() {
         let runner = this.head;
         let parent_runner;
-        while(runner.next != null){
-            if(runner.child != null){
+        while (runner.next != null) {
+            if (runner.child != null) {
                 temp = runner.next
                 runner.child.head = runner.next
                 runner.next = runner.child.head
@@ -151,8 +151,8 @@ class SLL{
             runner.next = temp
             temp = null
         }
-        }
     }
+}
 
 let newList = new SLL();
 newList.addToFront(1);
@@ -188,15 +188,15 @@ newList.printMe();
 
 // Thursday algorithm
 
-class Node{
-    constructor(value){
+class Node {
+    constructor(value) {
         this.value = value
         this.next = null
         this.prev = null
     }
 }
 
-class DLL{
+class DLL {
     constructor() {
         this.head = null
         this.tail = null
@@ -205,7 +205,7 @@ class DLL{
 
     addToFront(value) {
         var node = new Node(value);
-        if(this.head == null) {
+        if (this.head == null) {
             this.head = node;
             this.tail = node;
         } else {
@@ -219,7 +219,7 @@ class DLL{
 
     addToBack(value) {
         var node = new Node(value);
-        if(this.head == null) {
+        if (this.head == null) {
             this.head = node;
             this.tail = node;
         } else {
@@ -233,7 +233,7 @@ class DLL{
 
     printList() {
         var runner = this.head
-        while(runner){
+        while (runner) {
             console.log(runner.value);
             runner = runner.next
         }
@@ -249,7 +249,7 @@ dookie.addToBack(8).addToBack(9).addToBack(10).printList();
 // Friday
 
 
-class DLL{
+class DLL {
     constructor() {
         this.head = null
         this.tail = null
@@ -258,11 +258,11 @@ class DLL{
 
     addToFront(value) {
         var node = new Node(value);
-        if(!this.head){
+        if (!this.head) {
             this.head = node;
             this.tail = node;
         }
-        else{
+        else {
             node.next = this.head;
             this.head.prev = node;
             this.head = node;
@@ -273,11 +273,11 @@ class DLL{
 
     addtoBack(value) {
         var node = new Node(value);
-        if(!this.tail){
+        if (!this.tail) {
             this.tail = node;
             this.head = node;
         }
-        else{
+        else {
             node.prev = this.tail;
             this.tail.next = node;
             this.tail = node;
@@ -286,8 +286,8 @@ class DLL{
         return this
     }
 
-    removeFromFront(){
-        if(this.head){
+    removeFromFront() {
+        if (this.head) {
             this.head = this.head.next;
             this.head.prev = null;
         } else {
@@ -295,9 +295,9 @@ class DLL{
             this.tail = null;
         }
     }
-    
-    removeFromBack(){
-        if(this.head){
+
+    removeFromBack() {
+        if (this.head) {
             this.tail = this.tail.prev;
             this.tail.next = null;
         } else {
@@ -308,15 +308,97 @@ class DLL{
 
     printList() {
         var runner = this.head
-        while(runner){
+        while (runner) {
             console.log(runner.value);
             runner = runner.next
         }
     }
-    printListBackwards(){
+    printListBackwards() {
         var runner = this.tail;
-        while(runner){
+        while (runner) {
             console.log(runner.value);
             runner = runner.prev;
         }
     }
+
+
+// Tuesday
+
+class BSTNode {
+    constructor(value) {
+        this.value = value
+        this.left = null
+        this.right = null
+    }
+}
+class BST {
+    constructor() {
+        this.root = null
+    }
+
+    // Inserts a value into the tree
+    // positioning based on it's value.
+    add(value) {
+        let newNode = new BSTNode(value);
+        if (this.root == null) {
+            this.root = newNode;
+        }
+        let runner = this.root;
+        const addSide = side => {
+            if (!runner[side]) {
+                runner[side] = newNode;
+                return this;
+            };
+            runner = runner[side];
+        };
+
+        while (true) {
+            if (value === runner.value) {
+                return this;
+            };
+            if (value < runner.value) addSide('left');
+            else addSide('right');
+        };
+    }
+
+    findMin() {
+        var runner = this.root;
+        while(runner.left != null){
+            runner = runner.left
+            
+        }
+        console.log("The min is " + runner.value)
+        return runner
+    }
+
+    findMax() {
+        var runner = this.root;
+        while(runner.right != null){
+            runner = runner.right
+        }
+        console.log("The max is " + runner.value)
+        return runner
+    }
+
+printTree(node) {
+        console.log("Current node = ", node.value);
+        if (node.left != null) {
+            console.log("Left node of ", node.value, " = " + node.left.value);
+            this.printTree(node.left);
+        }
+        if (node.right != null) {
+            console.log("Right node of ", node.value, " = " + node.right.value);
+            this.printTree(node.right);
+        }
+    }
+}
+
+let newBST = new BST();
+newBST.add(35);
+newBST.add(1);
+newBST.add(25);
+newBST.add(55);
+newBST.add(45);
+newBST.printTree(newBST.root);
+newBST.findMin(newBST.root);
+newBST.findMax(newBST.root);
