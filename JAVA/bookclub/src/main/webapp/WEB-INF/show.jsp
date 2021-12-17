@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>View one book</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,6 +23,21 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Aww yeah we did it!</h1>
+	<div class="container">
+		<!-- Beginning of Container -->
+		<h1 display="inline">${book.title}</h1>
+		<a href="/dashboard">Back to the Shelves</a> <br> <br>
+		<h2>${book.user.userName}read ${book.title} by ${book.author}.</h2>
+		<br> <br>
+		<h2>Here are ${book.user.userName}'s thoughts:</h2>
+		<br>
+		<p>${book.description}</p>
+		<br> <br>
+		<button>
+			<a href="/books/${book.id}/edit">Edit</a>
+		</button>
+
+	</div>
+	<!-- End of Container -->
 </body>
 </html>

@@ -34,29 +34,35 @@ public class HomeController {
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model,
 			HttpSession session) {
+//		This calls on the register method in service - sends in the newUser info and the results from the binding result.
 		userServ.register(newUser, result);
+//		If we have any errors, we stay on that page and display the errors. 
 		if (result.hasErrors()) {
 			model.addAttribute("newLogin", new LoginUser());
 			return "index.jsp";
 		}
+//		If everything is good, set the userId in session.
 		session.setAttribute("user_id", newUser.getId());
-		return "redirect:/home";
+		return "redirect:/dashboard";
 	}
 	
 //	This route is the action for submitting the login form.
 	@PostMapping("/login")
 	public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model,
 			HttpSession session) {
+		
+		
 		User user = userServ.login(newLogin, result);
+//		If we have any errors we stay on the page and display errors.
 		if (result.hasErrors()) {
 			model.addAttribute("newUser", new User());
 			return "index.jsp";
 		}
 		session.setAttribute("user_id", user.getId());
-		return "redirect:/home";
+		return "redirect:/dashboard";
 	}
 	
-
+//	If no errors, set the UserID in session.
 	@RequestMapping("/dashboard")
 	public String dashboard() {
 		return "dashboard.jsp";

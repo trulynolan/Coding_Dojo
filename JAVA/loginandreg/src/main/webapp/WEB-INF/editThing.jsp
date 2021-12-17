@@ -23,6 +23,6 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Aww yeah we did it!</h1>
+
 </body>
 </html>

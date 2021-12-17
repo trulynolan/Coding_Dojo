@@ -363,9 +363,9 @@ class BST {
 
     findMin() {
         var runner = this.root;
-        while(runner.left != null){
+        while (runner.left != null) {
             runner = runner.left
-            
+
         }
         console.log("The min is " + runner.value)
         return runner
@@ -373,14 +373,123 @@ class BST {
 
     findMax() {
         var runner = this.root;
-        while(runner.right != null){
+        while (runner.right != null) {
             runner = runner.right
         }
         console.log("The max is " + runner.value)
         return runner
     }
 
-printTree(node) {
+
+    height(rootNode) {
+        
+    }
+
+    size(node) {
+
+    }
+
+
+
+    printTree(node) {
+        console.log("Current node = ", node.value);
+        if (node.left != null) {
+            console.log("Left node of ", node.value, " = " + node.left.value);
+            this.printTree(node.left);
+        }
+        if (node.right != null) {
+            console.log("Right node of ", node.value, " = " + node.right.value);
+            this.printTree(node.right);
+        }
+    }
+}
+
+let newBST = new BST();
+newBST.add(35);
+newBST.add(1);
+newBST.add(25);
+newBST.add(55);
+newBST.add(45);
+newBST.printTree(newBST.root);
+newBST.findMin(newBST.root);
+newBST.findMax(newBST.root);
+
+
+
+
+// Thurday
+
+
+
+class BSTNode {
+    constructor(value) {
+        this.value = value
+        this.left = null
+        this.right = null
+    }
+}
+class BST {
+    constructor() {
+        this.root = null
+    }
+
+    // Inserts a value into the tree
+    // positioning based on it's value.
+    add(value) {
+        let newNode = new BSTNode(value);
+        if (this.root == null) {
+            this.root = newNode;
+        }
+        let runner = this.root;
+        const addSide = side => {
+            if (!runner[side]) {
+                runner[side] = newNode;
+                return this;
+            };
+            runner = runner[side];
+        };
+
+        while (true) {
+            if (value === runner.value) {
+                return this;
+            };
+            if (value < runner.value) addSide('left');
+            else addSide('right');
+        };
+    }
+
+    findMin() {
+        var runner = this.root;
+        while (runner.left != null) {
+            runner = runner.left
+
+        }
+        console.log("The min is " + runner.value)
+        return runner
+    }
+
+    findMax() {
+        var runner = this.root;
+        while (runner.right != null) {
+            runner = runner.right
+        }
+        console.log("The max is " + runner.value)
+        return runner
+    }
+
+
+    height(rootNode) {
+        
+    }
+
+    size(node) {
+        dad = this.head
+        
+    }
+
+
+
+    printTree(node) {
         console.log("Current node = ", node.value);
         if (node.left != null) {
             console.log("Left node of ", node.value, " = " + node.left.value);

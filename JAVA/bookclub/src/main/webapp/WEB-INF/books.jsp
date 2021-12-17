@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>This be the dashboard</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,6 +23,36 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Aww yeah we did it!</h1>
+	<div class="container">
+		<h1 display="inline">
+			Welcome
+			<c:out value="${user.userName}"></c:out>
+		</h1>
+		<a href="/logout">Logout</a>
+		<h2 display="inline">Books from everyones shelves:</h2>
+		<a href="/books/new">+Add a book to my shelf</a>
+		<div class="container">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Author Name</th>
+						<th>Posted By</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="i" items="${books}">
+						<tr>
+							<td>${i.id}</td>
+							<td><a href="/show/${i.id}">${i.title}</a></td>
+							<td>${i.author}</td>
+							<td>${i.user.userName}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>
