@@ -16,6 +16,8 @@ import com.codingdojo.loginandreg.models.LoginUser;
 import com.codingdojo.loginandreg.models.User;
 import com.codingdojo.loginandreg.services.UserService;
 
+
+
 @Controller
 public class HomeController {
 

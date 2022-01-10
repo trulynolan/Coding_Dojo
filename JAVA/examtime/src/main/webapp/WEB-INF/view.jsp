@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>View one book</title>
+<title>View course</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -25,17 +25,14 @@
 <body>
 	<div class="container">
 		<!-- Beginning of Container -->
-		<h1 display="inline">${book.title}</h1>
-		<a href="/books">Back to the Shelves</a> <br> <br>
-		<h2>${book.user.userName} read ${book.title} by ${book.author}.</h2>
+		<h1 display="inline">Yoga Class:  ${course.name}</h1>
 		<br> <br>
-		<h2>Here are ${book.user.userName}'s thoughts:</h2>
+		<h2>Day:  ${course.weekday}</h2>
+		<br> <br>
+		<h2>Price: $${course.price}</h2>
 		<br>
-		<p>${book.description}</p>
+		<p>Decription of the yoga class:  ${course.description}</p>
 		<br> <br>
-		<button>
-			<a href="/books/${book.id}/edit">Edit</a>
-		</button>
 
 	</div>
 	<!-- End of Container -->

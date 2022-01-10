@@ -15,38 +15,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New book page</title>
+<title></title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+
 </head>
 <body>
-<div class="container">
-	<form:form action="/books/post" method="post" modelAttribute="book">
-		<form:hidden path="user" value="${user.id}" />
+<div class="container"> 
+	<form:form action="/classes/create" method="post" modelAttribute="course">
+		<form:hidden path="user" value="${userId}" />
+
+
 		<div class="form-group">
-			<form:label path="title">Title</form:label>
-			<form:input path="title" class="form-control" />
-			<form:errors path="title" class="text-danger" />
+			<label>Name: </label>
+			<form:input path="name" class="form-control" />
+			<form:errors path="name" class="text-danger" />
 		</div>
+
 		<div class="form-group">
-			<form:label path="author">Author:</form:label>
-			<form:input path="author" class="form-control" />
-			<form:errors path="author" class="text-danger" />
+			<label>Day of Week: </label>
+			<form:input path="weekday" class="form-control" />
+			<form:errors path="weekday" class="text-danger" />
 		</div>
+
 		<div class="form-group">
-			<form:label path="description">My thoughts:</form:label>
-			<form:textarea path="description" class="form-control" />
+			<label>Price: </label>
+			<form:input path="price" class="form-control" />
+			<form:errors path="price" class="text-danger" />
+		</div>
+
+		<div class="form-group">
+			<label>Description: </label>
+			<form:input path="description" class="form-control" />
 			<form:errors path="description" class="text-danger" />
 		</div>
-		<div class="form-group">
-			<input type="submit" value="Submit">
-		</div>
-		</div>
+
+		<input class="btn btn-info" type="submit" value="Create course">
 	</form:form>
-	</div>
 </div>
+
 </body>
 </html>

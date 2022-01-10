@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>View one book</title>
+<title>Dashboard; first page when you log in.</title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,20 +24,33 @@
 </head>
 <body>
 	<div class="container">
-		<!-- Beginning of Container -->
-		<h1 display="inline">${book.title}</h1>
-		<a href="/books">Back to the Shelves</a> <br> <br>
-		<h2>${book.user.userName} read ${book.title} by ${book.author}.</h2>
-		<br> <br>
-		<h2>Here are ${book.user.userName}'s thoughts:</h2>
-		<br>
-		<p>${book.description}</p>
-		<br> <br>
+		<h1 display="inline" class="text-info">
+			Welcome,
+			<c:out value="${user.userName}"></c:out>. 
+			<br></br>Here are some name suggestions..
+		</h1>
+		<a href="/logout">Logout</a>
+		<div class="d-flex justify-content-between">
+			<h2>Baby Names</h2>
+			<h2>Votes</h2>
+		</div>
+		<div class="container ">
+			<c:forEach var="i" items="${babynames}">
+				<div class="d-flex justify-content-between">
+					<form:form action="/vote/${i.id}" method="post">
+						<input type="submit" value="Upvote!" />
+					</form:form>
+					<a href="/view/${i.id}">${i.name}</a>
+					<p>${i.gender}</p>
+					<p>Origin: ${i.origin}</p>
+					<p>${i.votes}</p>
+				</div>
+			</c:forEach>
+		</div>
+		<br></br>
 		<button>
-			<a href="/books/${book.id}/edit">Edit</a>
+			<a href="/home/new">New Name</a>
 		</button>
-
 	</div>
-	<!-- End of Container -->
 </body>
 </html>

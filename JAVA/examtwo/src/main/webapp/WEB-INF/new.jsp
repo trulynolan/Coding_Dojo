@@ -15,38 +15,48 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New book page</title>
+<title></title>
 <!-- Bootstrap -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+
 </head>
 <body>
-<div class="container">
-	<form:form action="/books/post" method="post" modelAttribute="book">
-		<form:hidden path="user" value="${user.id}" />
+<div class="container"> 
+	<form:form action="/home/create" method="post" modelAttribute="babyname">
+		<form:hidden path="user" value="${userId}" />
+
+
 		<div class="form-group">
-			<form:label path="title">Title</form:label>
-			<form:input path="title" class="form-control" />
-			<form:errors path="title" class="text-danger" />
+			<label>Name: </label>
+			<form:input path="name" class="form-control" />
+			<form:errors path="name" class="text-danger" />
 		</div>
+
 		<div class="form-group">
-			<form:label path="author">Author:</form:label>
-			<form:input path="author" class="form-control" />
-			<form:errors path="author" class="text-danger" />
+			<label>Typical Gender: </label>
+			<form:input path="gender" class="form-control" />
+			<form:errors path="gender" class="text-danger" />
 		</div>
+
 		<div class="form-group">
-			<form:label path="description">My thoughts:</form:label>
-			<form:textarea path="description" class="form-control" />
-			<form:errors path="description" class="text-danger" />
+			<label>Origin: </label>
+			<form:input path="origin" class="form-control" />
+			<form:errors path="origin" class="text-danger" />
 		</div>
+
 		<div class="form-group">
-			<input type="submit" value="Submit">
+			<label>Meaning: </label>
+			<form:input path="meaning" class="form-control" />
+			<form:errors path="meaning" class="text-danger" />
 		</div>
-		</div>
+
+		<a href="/home">Cancel</a>
+		<input class="btn btn-info" type="submit" value="Submit">
 	</form:form>
-	</div>
 </div>
+
 </body>
 </html>
