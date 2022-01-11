@@ -45,3 +45,40 @@ function selectionSort(arr){
 }
 
 console.log(selectionSort([5,4,2,6,8,14,1,3]));
+
+// Tuesday
+const combine = (leftArr, rightArr) => {
+    for(var i = 0; i < rightArr.length; i++){
+        leftArr.push(rightArr[i]);
+    }
+    // leftArr.push(...rightArr);
+    for(var i = 0; i < leftArr.length; i++){
+        for(var j = i + 1; j < leftArr.length; j++){
+            if(leftArr[i] > leftArr[j]){
+                temp = leftArr[i];
+                leftArr[i] = leftArr[j];
+                leftArr[j] = temp;
+            }
+        }
+    }
+    return leftArr;
+}
+console.log(combine([1,2,7,9],[0,3,4,6,11]));
+console.log(combine([1],[0]));
+
+
+const combine = (leftArr, rightArr) => {
+    let result = [];
+
+    // for(let i = 0; i < leftArr.length; i++) {
+    while(leftArr.length && rightArr.length) {
+        if(leftArr[0] <= rightArr[0]) {
+            result.push(leftArr.shift())
+        } else {
+            result.push(rightArr.shift())
+        }
+    }
+    return [...result, ...leftArr, ...rightArr];
+}
+
+console.log(combine([1,2,7,9],[0,3,4,6,11]));
