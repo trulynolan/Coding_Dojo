@@ -166,3 +166,34 @@ console.log(partition([3,5,1,2,4]));
 
 console.log(partition([7,2,10,15,1]));
 
+// 
+
+function wordArray(str) {
+    let array = [];
+    let word = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === " " && str[i + 1] !== " ") {
+              if(word !== ""){
+                array.push(word);
+                word = "";
+               }
+        } else if (str[i] !== " ") {
+            word += str[i];
+        }
+    }
+    array.push(word);
+    return array;
+}
+console.log(wordArray("super cool word splitting           thing"));
+console.log(wordArray("Did I shine my   shoes today?"));
+
+function reverseWordOrder(str) {
+    let word = wordArray(str);
+    let reversed = "";
+    for (let i = word.length - 1; i >= 0; i--) {
+        reversed += word[i] + " ";
+    }
+    return reversed;
+}
+
+console.log(wordReverse("super cool word splitting thing "));
