@@ -68,3 +68,32 @@ const isRotation = (str1, str2) => {
 
 console.log(isRotation("Did I shine my shoes today?", "es today?Did I shine my sho"));
 console.log(isRotation("Did I shine my shoes today? ", "es today?Did I shine my sho"));
+
+
+// Wednesday
+
+const dedupe = (str) => {
+    var newStr = "";
+    var newStr2 = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        let dupa = false;
+        for (var j = 0; j < newStr.length; j++) {
+            if (str[i] === newStr[j]) {
+                dupa = true;
+            }
+        }
+        if (!dupa) {
+            newStr += str[i];
+        }
+        dupa = false;
+    }
+    for (let i = newStr.length - 1; i >= 0; i--) {
+        newStr2 += newStr[i];
+    }
+    return newStr2;
+}
+
+
+console.log(dedupe("Snaps! crackles! pops!"));
+console.log(dedupe("Did I shine my shoes today?"));
+console.log(dedupe("scoop dedupe!"));
