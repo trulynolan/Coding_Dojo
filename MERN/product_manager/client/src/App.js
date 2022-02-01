@@ -1,19 +1,27 @@
 import './App.css';
 import Form from './Components/Form';
 import AllProducts from './Components/AllProducts';
-import {BrowserRouter,Switch,Route} from "react-router-dom";
+import Single from './Views/Single';
+import Update from './Views/Update';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-    <BrowserRouter>
-    <Form/>
-      <Switch>
-      <Route exact path="/products">
-        <AllProducts/>
-      </Route>
-    </Switch>
-  </BrowserRouter>
-  </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Form />
+            <AllProducts />
+          </Route>
+          <Route exact path="/api/products/:_id">
+            <Single/>
+          </Route>
+          <Route exact path="/api/products/update/:_id">
+            <Update/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
 }
 
